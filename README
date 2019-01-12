@@ -1,9 +1,19 @@
 Benchmark performance of logging to an in-memory buffer, file, and null device.
 
-    go test -bench=.
-
 Ignores initialization operations such as creating a new logger and opening the
 file.
 
 BenchmarkFile() ensures the file is empty before timing the benchmark and
 clears the file afterwards.
+
+Results:
+
+	$ go test -bench=.
+	goos: linux
+	goarch: amd64
+	pkg: github.com/esote/log-benchmark
+	BenchmarkBuffer-6   	 2000000	       970 ns/op
+	BenchmarkFile-6     	 1000000	      2157 ns/op
+	BenchmarkNull-6     	 1000000	      1403 ns/op
+	PASS
+	ok  	github.com/esote/log-benchmark	6.553s
