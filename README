@@ -1,11 +1,9 @@
 Benchmark performance of logging to an in-memory buffer, file, and null device.
 
-```
-go test -bench=.
-```
+    go test -bench=.
 
 Ignores initialization operations such as creating a new logger and opening the
 file.
 
-`BenchmarkFile()` ensures the file is empty before timing the benchmark and
+BenchmarkFile() ensures the file is empty before timing the benchmark and
 clears the file afterwards.
